@@ -1,13 +1,12 @@
 const form = document.querySelector('.login-form');
-const email = document.getElementById("email");
-const password = document.getElementById("password");
 const submit = form.lastElementChild;
-
 
 form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(event) {
     event.preventDefault();
+    const email = event.currentTarget.elements.email;
+    const password = event.currentTarget.elements.password;
 
     if (email.value.trim() === "" || password.value.trim() === "") {
         alert("Всі поля повинні бути заповнені.")
