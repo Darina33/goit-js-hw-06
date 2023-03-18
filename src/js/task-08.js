@@ -1,0 +1,28 @@
+const form = document.querySelector('.login-form');
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const submit = form.lastElementChild;
+
+
+form.addEventListener("submit", onFormSubmit);
+
+function onFormSubmit(event) {
+    event.preventDefault();
+
+    if (email.value.trim() === "" || password.value.trim() === "") {
+        alert("Всі поля повинні бути заповнені.")
+    } else {
+        const formElements = event.currentTarget.elements;
+
+    const emailValue = formElements.email.value;
+    const passwordValue = formElements.password.value;
+
+    const formData = {
+        emailValue,
+        passwordValue,
+    }
+
+        console.log(formData);
+        event.currentTarget.reset();
+    }
+}
